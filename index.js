@@ -74,7 +74,7 @@
                 console.log(`count is smaller than 1000, starting to load products array`);
                 products.push(...api.data.products);
                 if (maxPrice > 100000) productsRunningLoop = false; // because maxPrice can only be 100000 so should have loaded everything by this time. 
-                minPrice = maxPrice; // works as offset
+                minPrice = maxPrice+1; // works as offset and adding 1 to avoid duplicates
                 maxPrice = maxPrice*2; // works as limit
             } else {
                 maxPrice = maxPrice/2
